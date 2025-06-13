@@ -259,7 +259,6 @@ class ChatApp {
     if (!userMessage) return;
 
     this.userInput.value = "";
-    this.addMessage("user", userMessage);
 
     try {
       // Compose the message history from this chat before the new user message
