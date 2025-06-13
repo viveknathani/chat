@@ -20,7 +20,7 @@ class ChatApp {
     this.currentProject = null;
     this.currentChat = null;
     this.availableModels = [];
-    this.selectedModel = "gpt-3.5-turbo";
+    this.selectedModel = "gpt-4o";
     this.initialize();
     this.setupMarkdown();
   }
