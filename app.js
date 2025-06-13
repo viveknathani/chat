@@ -260,6 +260,8 @@ class ChatApp {
 
     this.userInput.value = "";
 
+    this.addMessage("user", userMessage);
+
     try {
       // Compose the message history from this chat before the new user message
       const previousMessages = this.state.messages[this.currentChat].map(
@@ -268,9 +270,6 @@ class ChatApp {
           content: msg.content,
         }),
       );
-
-      // Append the new user message as well
-      previousMessages.push({ role: "user", content: userMessage });
 
       const response = await fetch(
         "https://api.openai.com/v1/chat/completions",
