@@ -1,0 +1,10 @@
+{
+  "name": "chat",
+  "version": "0.1.0",
+  "scripts": {
+    "start": "http-server -p 8087"
+  },
+  "dependencies": {
+    "http-server": "^14.1.0"
+  }
+}

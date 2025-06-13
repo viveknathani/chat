@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chat</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="api-key-section">
+                <input type="password" id="api-key" placeholder="Enter OpenAI API Key">
+                <button id="save-key">
+                    <i class="fas fa-key"></i>
+                    Save API Key
+                </button>
+            </div>
+            <div class="projects-section">
+                <h3>Projects</h3>
+                <button id="new-project">
+                    <i class="fas fa-folder-plus"></i>
+                    New Project
+                </button>
+                <div id="projects-list"></div>
+            </div>
+            <div class="chats-section">
+                <h3>Chats</h3>
+                <button id="new-chat">
+                    <i class="fas fa-plus"></i>
+                    New Chat
+                </button>
+                <div id="chats-list"></div>
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="top-bar">
+                <div class="model-selector">
+                    <select id="model-select" disabled>
+                        <option value="">Loading models...</option>
+                    </select>
+                </div>
+            </div>
+            <div id="chat-messages"></div>
+            <div class="input-area">
+                <div class="input-message-container">
+                    <textarea id="user-input" placeholder="Type your message..."></textarea>
+                    <button id="send-message">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
