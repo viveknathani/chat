@@ -271,6 +271,17 @@ class ChatApp {
         }),
       );
 
+      const systemPrompt = {
+        role: "system",
+        content: `## Instructions
+          * Be concise
+          * Use simple sentences. But feel free to use technical jargon.
+          * Do NOT overexplain basic concepts. Assume the user is technically proficient.
+          * AVOID flattering, corporate-ish or marketing language. Maintain a neutral viewpoint.
+          * AVOID vague and / or generic claims which may seem correct but are not substantiated by the the context.
+        `,
+      };
+
       const response = await fetch(
         "https://api.openai.com/v1/chat/completions",
         {
@@ -281,7 +292,7 @@ class ChatApp {
           },
           body: JSON.stringify({
             model: this.selectedModel,
-            messages: previousMessages,
+            messages: [systemPrompt, ...previousMessages],
             stream: true,
           }),
         },
